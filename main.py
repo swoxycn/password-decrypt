@@ -29,9 +29,9 @@ class Main:
 #                                                                      |___||_|       
         """
         )
-        print("By: https://www.github.com/swoxycc")
+        print("By: https://www.github.com/swoxycn")
         print(
-            "    https://www.github.com/swoxycc/password-decrypt\n",
+            "    https://www.github.com/swoxycn/password-decrypt\n",
         )
 
         print("=" * 50, end="\n")
