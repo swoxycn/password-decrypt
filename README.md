@@ -17,6 +17,6 @@
 Projeyi klonlayın:
 
    ```bash
-   git clone https://github.com/swoxycc/password-decrypt.git
+   git clone https://github.com/swoxycan/password-decrypt.git
    cd password-decrypt
    python main.py
