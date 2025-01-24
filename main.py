@@ -24,14 +24,14 @@ class Main:
 #                                                                                     
 #   _____                                    _    ____                            _   
 #  |  _  | ___  ___  ___  _ _ _  ___  ___  _| |  |    \\  ___  ___  ___  _ _  ___ | |_ 
-#  |   __|| .'||_ -||_ -|| | | || . ||  _|| . |  |  |  || -_||  _||  _|| | || . ||  _|
+#  |   __|| .'||_ -||_ -|| | | || . ||  _|| . |  |  |  || -_||  _||  _|| | || . ||  _|#
 #  |__|   |__,||___||___||_____||___||_|  |___|  |____/ |___||___||_|  |_  ||  _||_|  
 #                                                                      |___||_|       
         """
         )
-        print("By: https://www.github.com/swoxycn")
+        print("By: https://www.github.com/swoxycan")
         print(
-            "    https://www.github.com/swoxycn/password-decrypt\n",
+            "    https://www.github.com/swoxycan/password-decrypt\n",
         )
 
         print("=" * 50, end="\n")
@@ -73,11 +73,11 @@ class Main:
             ]
         )
 
-        self.browser = browser["browser"]  # type: ignore
+        self.browser = browser["browser"]  
 
         self.source_path = os.path.normpath("C:\\Users\\" + self.win_user_account)
 
-        # Select the Windows user account
+        
         if self.browser == "Google Chrome":
             self.browser_path = os.path.normpath(
                 self.source_path + "\\AppData\\Local\\Google\\Chrome\\User Data"
@@ -102,25 +102,25 @@ class Main:
             print("[-] Invalid browser")
             sys.exit(1)
 
-        # Check if the browser is installed
+        
         if not self.check_browser():
             print("[-] " + self.browser + " browser not found")
             sys.exit(1)
 
-        # Select the user profiles
+        
         self.user_profiles = self.select_user_profile()
 
-        # Get the secret key
+        
         self.secret_key = self.get_secret_key()
 
-        # Temporarily copy the Login Data file to the Temp folder to prevent database lock
+        
         self.make_copy()
 
         print("[+] Starting Decryption")
 
         print("=" * 50, end="\n")
 
-        # Decrypt the passwords
+        
         for profile in self.user_profiles:
 
             print("[+] Decrypting Profile: " + profile)
@@ -334,11 +334,11 @@ class Main:
             list[dict]: List of decrypted user login details
         """
 
-        # Connect to the Database
+        
         conn = self.database_connection(path)
         cursor = conn.cursor()
 
-        # Get the results
+        
         try:
             cursor.execute(
                 "SELECT origin_url, username_value, password_value FROM logins"
@@ -455,7 +455,6 @@ class Main:
             print("[-] %s" % (e))
 
 
-# Run the script
 try:
     Main()
 except KeyboardInterrupt:
